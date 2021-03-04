@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Calcul salaire brut et net</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body>
+        <div id="main">
+            <div class="ligne">
+                <h1>Calcul du salaire brut en net</h1>
+            </div>
+            <div class="ligne">
+                <label for="contract" class="label"><b>Type de contrat :</b></label><br>
+                <input type="radio" name="contract" id="salarie-prive" onclick="selectTaux(0.22)" checked> Salarié du privé
+                <input type="radio" name="contract" id="cadre-prive" onclick="selectTaux(0.25)"> Cadre du privé
+                <input type="radio" name="contract" id="salarie-public" onclick="selectTaux(0.15)" > Salarié du public
+            </div>
+            <div class="ligne">
+                <label for="contract" class="label"><b>Nombre de mois :</b></label><br>
+                <input type ="radio" name="month" onclick="nbMois(12)" checked> 12 mois
+                <input type ="radio" name="month" onclick="nbMois(13)"> 13 mois
+                <input type ="radio" name="month" onclick="nbMois(14)"> 14 mois
+                <input type ="radio" name="month" onclick="nbMois(15)"> 15 mois
+                <input type ="radio" name="month" onclick="nbMois(16)"> 16 mois  
+            </div>
+            <div class="colonne">
+                <div class="ligne">
+                    <h2>Salaire brut</h2>
+                </div> 
+                <div class="ligne">
+                    <label for="horaire-brut" class="label"> Horaire brut</label><br>
+                    <input type="number" name="horaire-brut" id="horaire-brut" onkeyup="horairebrut()">
+                </div> 
+                <div class="ligne">
+                    <label for="mensuel-brut" class="label"> Mensuel brut</label><br>
+                    <input type="number" name="mensuel-brut" id="mensuel-brut" onkeyup="mensuelbrut()">
+                </div> 
+                <div class="ligne">
+                    <label for="annuel-brut" class="label"> Annuel brut</label><br>
+                    <input type="number" name="annuel-brut" id="annuel-brut" onkeyup="annuelbrut()">
+                </div> 
+            </div>
+            <div class="colonne">
+                <div class="ligne">
+                    <h2>Salaire net</h2>
+                </div> 
+                <div class="ligne">
+                    <label for="horaire-net" class="label"> Horaire net</label><br>
+                    <input type="number" name="horaire-net" id="horaire-net" onkeyup="horairenet()">
+                </div> 
+                <div class="ligne">
+                    <label for="mensuel-net" class="label"> Mensuel net</label><br>
+                    <input type="number" name="mensuel-net" id="mensuel-net" onkeyup="mensuelnet()">
+                </div> 
+                <div class="ligne">
+                    <label for="annuel-net" class="label"> Annuel net</label><br>
+                    <input type="number" name="annuel-net" id="annuel-net" onkeyup="annuelnet()">
+                </div> 
+            </div>
+
+        </div>
+    </body>
+</html>
