@@ -17,6 +17,10 @@
                 <input type="radio" name="contract" id="salarie-public" onclick="selectTaux(0.15)" > Salarié du public
             </div>
             <div class="ligne">
+                <label for="hours" class="label"><b>Nombre d'heures travaillées (par semaine) :</b></label><br>
+                <input type="range" min="5" max="52" value="39" class="slider" id="hours" name="hours" onchange="hours()"><span id="hours-number">39</span>
+            </div>
+            <div class="ligne">
                 <label for="contract" class="label"><b>Nombre de mois :</b></label><br>
                 <input type ="radio" name="month" onclick="nbMois(12)" checked> 12 mois
                 <input type ="radio" name="month" onclick="nbMois(13)"> 13 mois

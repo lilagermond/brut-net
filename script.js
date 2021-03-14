@@ -1,5 +1,9 @@
 var tauxApplicable = 0.22;
 var nombreMois = 12;
+var heuresTravaillees = 39;
+var nombreSemaineMois = 52 / 12;
+var somme = "";
+console.log(nombreSemaineMois);
 
 function nbMois(mois){
     nombreMois = mois;
@@ -18,20 +22,30 @@ function selectTaux(taux){
     }
 }
 
-function mensuelbrut() {
-    var somme = document.getElementById("mensuel-brut").value;
+function hours(){
+    heuresTravaillees = document.getElementById("hours").value;
+    document.getElementById("hours-number").innerHTML = heuresTravaillees;
+    if (somme != ""){
+        mensuelbrut();
+    }
+}
 
-    document.getElementById("horaire-brut").value = (somme / 151.6).toFixed(2);
+
+// 151,66    
+function mensuelbrut() {
+    somme = document.getElementById("mensuel-brut").value;
+    
+    document.getElementById("horaire-brut").value = (somme / (nombreSemaineMois * heuresTravaillees)).toFixed(2);
     document.getElementById("mensuel-brut").value = (somme*1).toFixed(0);
     document.getElementById("annuel-brut").value = (somme * nombreMois).toFixed(0);
-    document.getElementById("horaire-net").value = (somme / 151.6 * (1 -tauxApplicable)).toFixed(2);
+    document.getElementById("horaire-net").value = ((somme / (nombreSemaineMois * heuresTravaillees)) * (1 -tauxApplicable)).toFixed(2);
     document.getElementById("mensuel-net").value = (somme * (1 - tauxApplicable)).toFixed(0);
     document.getElementById("annuel-net").value = (somme * nombreMois * (1 - tauxApplicable)).toFixed(0);
 }
 
 function horairebrut() {
     var somme = document.getElementById("horaire-brut").value;
-    document.getElementById("mensuel-brut").value = somme * 151.6;
+    document.getElementById("mensuel-brut").value = somme * (nombreSemaineMois * heuresTravaillees);
     mensuelbrut();
 }   
 

@@ -26,6 +26,14 @@ h2{
     margin: 5px 0;
 }
 
+#hours{
+    margin-top:10px;
+}
+
+#hours-number {
+    margin-left:10px;
+}
+
 .label {
     margin-bottom:15px;
 }
