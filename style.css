@@ -38,6 +38,10 @@ h2{
     margin-bottom:15px;
 }
 
+.choice{
+    display:inline-block;
+}
+
 input[type="radio"]{
     margin-left:15px;
 }
@@ -53,4 +57,24 @@ input[type="number"]{
 
 .ligne {
     padding: 10px 20px;
+}
+
+@media (max-width:900px){
+    #main {
+        width:90%;
+        padding:10px;
+        margin:15px auto;
+    }
+    
+    .choice{
+        display:block;
+    }
+    
+    input[type="number"]{
+        height:25px;
+    }
+    
+    h2{
+        font-size:20px;
+    }
 }
